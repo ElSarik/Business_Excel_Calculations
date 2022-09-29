@@ -1,9 +1,5 @@
-#Version 2.1: Sunday hours fixed
-#Version 2.2: Added Error display if there is a problem with a cell
-
 import openpyxl
 from decimal import *
-from openpyxl.styles import Color, colors, Font, PatternFill
 
 
 def main():
@@ -71,10 +67,6 @@ def main():
 
                         else:
                             sunday_hours = sunday_hours + (f_end - f_beg)
-                        
-                ####print(cellObj.coordinate) #DEBUGGING
-                
-                ####print(cellObj.fill.start_color.index)   #DEBUGGING
                     
                 time = cellObj.value
 
@@ -140,13 +132,6 @@ def main():
                                 hours = hours + 1.3
                             
                             int_hours = int(hours)
-            
-            #print('single days = ',count_single)
-            #print('normal days = ',count_normal)
-            #print('hours = ',int_hours)
-            #print('Sunday = ',sunday)
-            #print('---END OF ROW---')
-            #print(' ')
 
             str_Counter = str(Counter)
 
@@ -159,14 +144,6 @@ def main():
             sheet[Cell_K] = count_normal
             sheet[Cell_L] = int_hours
             sheet[Cell_M] = sunday_hours
-
-            #print(sheet[Cell_J].coordinate , sheet[Cell_J].value)
-            #print(sheet[Cell_K].coordinate , sheet[Cell_K].value)
-            #print(sheet[Cell_L].coordinate , sheet[Cell_L].value)
-            #print(sheet[Cell_M].coordinate , sheet[Cell_M].value)
-
-            #print('---END OF ROW---')
-            #print(' ')
 
             Counter = Counter + 1
         
